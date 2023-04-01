@@ -13,7 +13,7 @@ def solution(bridge_length, weight, truck_weights):
     # 다리의 무게 
     bridge_weight = 0
 
-    # 트럭 무게도 덱으로 만들어줌
+    # 트럭 무게도 덱으로 만들어줌 
     truck_weights_dq = deque(truck_weights)
 
     while truck_weights_dq :
