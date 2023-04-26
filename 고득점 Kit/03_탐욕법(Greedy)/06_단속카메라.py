@@ -1,17 +1,26 @@
-"""
-고속도로를 이용하는 차량의 경로 routes 
-모든 차량이 한 번은 단속용 카메라를 만나도록 하려면 
-최소 몇 대의 카메라의 설치가 필요한가?
-
-1 <= 차의 수 < 10,000
-routes의 0번째 인덱스 : 고속도로에 진입한 지점
-routes의 1번째 인덱스 : 고속도로에서 나간 지점
-
-차량의 진입, 진출 지점에 카메라가 설치되어도 카메라를 만난 것으로 간주
-차량의 진입, 진출 지점은 -30,000 이상 30,000 이하
-"""
-
 def solution(routes):
+    cnt = 0 # 카메라의 개수
     
+    # 차량이 남아있는 경우
+    while routes :
+        # 고속도로에서 진출하는 시점을 기준으로 오름차순 정렬
+        routes.sort(key=lambda data:data[1])
 
-routes = [[-20,-15], [-14,-5], [-18,-13], [-5,-3]]
+        out_pos = routes.pop(0)[1] # 진출 시점을 기준점 
+        cnt += 1 # 카메라를 한 대 설치
+
+        # 더 이상 따질 차량이 없을 때
+        if not routes :
+            break 
+
+        # 진출 기준인 out_pos보다 일찍 진입한 차량들의 인덱스 모음
+        out_idx_list = []
+        for idx, elem in enumerate(routes) :
+            if elem[0] <= out_pos  :
+                out_idx_list.append(idx)
+        
+        # 모아놨던 인덱스를 pop 시켜줌
+        for remove_idx in reversed(out_idx_list) : 
+            routes.pop(remove_idx)
+    
+    return cnt
