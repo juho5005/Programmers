@@ -15,7 +15,3 @@ def solution(players, callings):
         players[pos-1], players[pos] = players[pos], players[pos-1]
 
     return players
-
-players = ["mumu", "soe", "poe", "kai", "mine"]
-callings = ["kai", "kai", "mine", "mine"]
-print(solution(players, callings))
