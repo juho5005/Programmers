@@ -24,5 +24,3 @@ def solution(n, words):
         # 탈락자의 자기 순서
         b = (seq // n) + 1
         return [a,b]
-
-print(solution(3, ["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]))

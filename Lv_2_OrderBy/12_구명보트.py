@@ -24,5 +24,3 @@ def solution(people, limit):
         cnt += 1
 
     return cnt 
-
-print(solution([70, 80, 50], 100))

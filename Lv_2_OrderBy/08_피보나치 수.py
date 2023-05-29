@@ -8,5 +8,3 @@ def solution(n):
 
         if i == n :
             return dp[-1]
-    
-print(solution(5))

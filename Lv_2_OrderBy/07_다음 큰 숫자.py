@@ -15,7 +15,5 @@ def solution(n):
         if l == binary_divide(i) :
             return i
 
-print(solution(78))
-
     
     

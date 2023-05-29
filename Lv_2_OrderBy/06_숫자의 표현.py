@@ -19,5 +19,3 @@ def solution(n):
                 cnt += 1
                 break 
     return cnt 
-
-print(solution(15))
