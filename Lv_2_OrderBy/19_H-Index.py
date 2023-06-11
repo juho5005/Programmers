@@ -16,6 +16,3 @@ def solution(citations):
             return max_num
 
         max_num -= 1
-
-
-print(solution([0,0,0,0,0]))
