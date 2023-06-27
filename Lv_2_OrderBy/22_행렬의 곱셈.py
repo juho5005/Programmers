@@ -4,7 +4,6 @@ def solution(arr1, arr2):
         a = [elem for elem in arr1[i]]
         a_lst.append(a)
 
-
     b_lst = []
     for k in range(len(arr2[0])) :
         b = []
